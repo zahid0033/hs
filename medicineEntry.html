@@ -1,0 +1,152 @@
+<?php session_start();
+$pid=$_SESSION['pid'];
+$sql="select mId,quantity from specaladvice where pid=$pid";
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+
+$i=0;
+
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // outpu t data of each row
+    while($row = $result->fetch_assoc()) {
+	      $mNo[i]=$row['mId'];
+		  $qNo[i]=$row['quantity'];
+		  $i+=1;
+ 	}
+	}
+	for($j=0;$j<$i;$j++)
+	{
+	   sql="select name,type,unitPrice,mfc,exr from medicine where id=$mNo[$j]";
+	   $result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // outpu t data of each row
+    while($row = $result->fetch_assoc()) {
+	      $name[j]=$row['name'];
+		  $type[j]=$row['type'];
+		  $up[j]=$row['unitePrice'];
+		  $mfc[j]=$row['mfc'];
+		  $exr=$row['exr'];		  
+ 	}
+	}
+	   
+	}
+	
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medicine Entry</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container back">
+        <h2 class="text-center">Medicine Entry Form</h2>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="">
+					<div class="form-group">
+                        <label for="exampleFormControlName">Supplier ID  <span style="color:red">*<span></label>
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-4 row">
+                                <input type="text" name="" class="form-control required" placeholder="id"></div>
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <label for="exampleFormControlName">Supplier Name  <span style="color:red">*<span></label>
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-4 row">
+                                <input type="text" name="" class="form-control required" placeholder="name"></div>
+                        </div>
+					</div>
+					<div class="form-group">
+                        <label for="exampleFormControlMail">Date of Supply </label>
+
+                        <input class="form-control" type="date" value="2018-04-1" id="example-date-input">
+                    </div>
+				</form>
+				<br><br>
+				<table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Medicine Id</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Unit price</th>
+                            <th>Quantity</th>
+							<th>Date of Manufacture</th>
+							<th>Expiry date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> <input type="text" name="mid" value="<?php echo $mid[0]?>"class="form-control required"></div></td>
+                            <td> <input type="text" name="name" value="<?php echo $name[0]?>" class="form-control required" ></div></td>
+                            <td> <input type="text" name="type" value="<?php echo $type[0]?>" class="form-control required" ></div></td>
+                            <td> <input type="text" name="up" value="<?php echo $up[0]?>" class="form-control required" ></div></td>
+                            <td> <input type="text" name="q" value="<?php echo $qNo[0]?>" class="form-control required" ></div></td>  
+							<td> <input type="text" name="mfc" value="<?php echo $mfc[0]?>" class="form-control required" ></div></td>
+                            <td> <input type="text" name="exr" value="<?php echo $exr[0]?>" class="form-control required"></div></td>  
+							
+                        </tr>
+                        <tr>
+                           <td> <input type="text" name="mid2" value="<?php echo $mid[1]?>" class="form-control required" ></div></td>
+                            <td> <input type="text" name="name2"value="<?php echo $name[1]?>" class="form-control required" ></div></td>
+                            <td> <input type="text" name="type2" value="<?php echo $type[1]?>"class="form-control required"></div></td>
+                            <td> <input type="text" name="up2" value="<?php echo $up[1]?>"class="form-control required" ></div></td>
+                            <td> <input type="text" name="q2"value="<?php echo $qNo[1]?>" class="form-control required" ></div></td>  
+							<td> <input type="text" name="mfc2" value="<?php echo $mfc[0]?>"class="form-control required" ></div></td>
+                            <td> <input type="text" name="exr2" value="<?php echo $exr[0]?>"class="form-control required" ></div></td>  
+                        </tr>
+						<tr>
+                           <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>  
+							<td> <input type="text" name="" class="form-control required"></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>  
+                        </tr>
+						<tr>
+                           <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required"  ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>  
+							<td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required"></div></td>  
+                        </tr>
+                        <tr>
+                           <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required" ></div></td>  
+							<td> <input type="text" name="" class="form-control required" ></div></td>
+                            <td> <input type="text" name="" class="form-control required"></div></td>  
+                        </tr>
+						
+                    </tbody>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

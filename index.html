@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Patient Admission Form</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container back">
+        <h2 class="text-center"> Patient Admission form</h2>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="patIndex.php" method="POST">
+
+                    <div class="form-group">
+                        <label for="exampleFormControlMail">Date of Admission <span style="color:red">*<span></label>
+
+                        <input class="form-control" type="date" value="2011-08-19" name="doa">
+                    </div>
+
+
+
+
+                    <div class="form-group">
+
+                        <label for="exampleFormControlName">Your Name <span style="color:red">*<span></label>
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-4 row">
+                                <input type="text" name="fName" class="form-control required" placeholder="first name"></div>
+                            <div class="col-sm-4">
+                                <input type="text" name="mName" class="form-control required" placeholder="middle name"></div>
+                            <div class="col-sm-4">
+                                <input type="text" name="lName" class="form-control required"  placeholder="last name"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlMail">Date of Birth</label>
+
+                        <input class="form-control" type="date" value="2018-04-1" name="dob">
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="col-sm-12 row margin">
+                            <div class="col-sm-6 row">
+                                <label for="exampleFormControlMail">Mobile Number (1)</label>
+                                <input class="form-control" type="tel" value="+880" name="pn1">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="exampleFormControlMail">Mobile Number (2)</label>
+                                <input class="form-control" type="tel" value="+880" name="pn2">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Present Address  **</label>
+
+                        <div class="col-sm-12 row margin">
+
+                            <div class="col-sm-6 row">
+                                <label for="exampleFormControlName">Street no/Village</label>
+                                <input type="text" class="form-control required" name="PstreetNo" placeholder=" street no">
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="exampleFormControlName">Street Name</label>
+                                <input type="text" class="form-control required" name="Pstreet" placeholder="street name">
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-4 row">
+                                <input type="text"  class="form-control required" name="Parea" placeholder="Area">
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text"  class="form-control required" name="Pthana" placeholder="Thana">
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text"  class="form-control required" name="Pdist" placeholder="District">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+
+                        <label>Permanent Address  **</label>
+
+                        <div class="col-sm-12 row margin">
+
+                            <div class="col-sm-6 row">
+                                <label for="exampleFormControlName">Street no/Village</label>
+                                <input type="text"  class="form-control required" name="streetNo" placeholder=" street no">
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="exampleFormControlName">Street Name</label>
+                                <input type="text" class="form-control required" name="street" placeholder="street name">
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-4 row">
+                                <input type="text"  class="form-control required" name="area" placeholder="Area">
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text"  class="form-control required" name="thana" placeholder="Thana">
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text"  class="form-control required" name="dist" placeholder="District">
+                            </div>
+                        </div>
+                    </div>
+
+                 
+                    <div class="form-group">
+                        <label for="">Profession</label> <br>
+                        <input type="checkbox" name="job[]" value="Government Job">Government Job
+                        <input type="checkbox" name="job[]" value="Private Job">Private Job
+                        <input type="checkbox" name="job[]" value="Business">Business
+                        <input type="checkbox" name="job[]" value="Farmer">Farmer
+                        <input type="checkbox" name="job[]" value="Retired">Retired<input type="checkbox" name="job[]" value="Others">Others
+                    
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="">Amount Deposited</label>
+                        <input class="form-control" type="number" value="2000" name="amount">
+                    </div>
+
+                    <div class="form-group">
+                        <fieldset>
+                        <label for="">Choice</label> <br>
+                        <label class="checkbox-inline"><input type="checkbox" name="room[]" value="Cabin">Cabin</label>
+                        <label class="checkbox-inline"><input type="checkbox" name="room[]" value="Wards">Wards</label>
+                    </fieldset>
+                    </div>
+                    <br>
+
+
+
+                    <p>Signature with date</p>
+                    <span>name</span><br>
+                    <span class="margin">Relation with patient</span>
+                    <br><br>
+
+
+
+                    <div class="form-group">
+                        <input type="submit" name="submit" value="SAVE" class="form-control btn btn-primary">
+                    </div>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
