@@ -1,6 +1,5 @@
 <!--
     Hello there
-I am here
 -->
 <?php session_start();
 $wardId=$_SESSION['wardNo'];
