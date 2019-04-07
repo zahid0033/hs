@@ -1,3 +1,6 @@
+<!--
+    Hello there
+-->
 <?php session_start();
 $wardId=$_SESSION['wardNo'];
 $bedNum=$_SESSION['bedNo'];
